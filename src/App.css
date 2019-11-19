@@ -1,22 +1,156 @@
-.App {
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("./components/fonts/GothamBold.otf") format("opentype");
+}
+
+/* 
+
+NAV BAR
+
+*/
+
+#nav-logo {
+  height: 30px;
+  padding: 5px 16px;
+}
+
+.nav-text {
+  padding: 14px 16px;
+}
+
+.nav-bar a {
+  float: left;
+  color: #f2f2f2;
   text-align: center;
+  /* padding: 14px 16px; */
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.App-logo {
-  height: 40vmin;
+.nav-bar a:hover {
+  background-color: #ddd;
+  color: black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar {
+  background-color: #333;
+  /* overflow: hidden; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  align-content: center;
+
+  font-family: Gotham-Bold;
 }
 
-.App-link {
-  color: #09d3ac;
+/*
+
+APP
+
+*/
+
+.App {
+  height: auto;
+}
+
+/* 
+
+HOMEPAGE
+
+ */
+
+#homepage {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 100px auto;
+  /* height: 100% */
+}
+
+#trending-topics {
+}
+
+#homepage-header {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #333;
+  color: white;
+  font-family: Gotham-Bold;
+  font-size: 32px;
+}
+#item2 {
+  background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  display: flex;
+  justify-content: center;
+
+  height: calc(100vh - 145px);
+  /* flex-grow: 1; */
+  /* flex: 0 1 auto; */
+  overflow: auto;
+  /* align-items: center; */
+}
+#item3 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  /* height: calc(100vh - 145px); */
+  /* height: 500px; */
+}
+
+table {
+  /* border-bottom: 5px solid black; */
+  /* cellspacing=0; */
+}
+
+.article-table {
+  padding: 30px;
+  width: 90%;
+  border-spacing: 0;
+  /* height: 300px; */
+}
+
+.article-table-row {
+  height: 50px;
+}
+
+.red-text {
+  color: #ba1f3f;
+}
+
+.vote-img {
+  height: 50px;
+}
+
+.vote-col {
+  width: 50px;
+  border-top: 1px solid black;
+}
+
+.title-col {
+  padding: 15px;
+  border-top: 1px solid black;
+}
+
+.title-in-table {
+  padding: 2px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.info-in-table {
+  font-size: 12px;
+  padding: 2px;
+  display: flex;
+  justify-content: flex-start;
 }
