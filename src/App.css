@@ -24,7 +24,7 @@ NAV BAR
   text-align: center;
   /* padding: 14px 16px; */
   text-decoration: none;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 .nav-bar a:hover {
@@ -47,27 +47,24 @@ APP
 
 */
 
-.App {
+/* .App {
   height: auto;
-}
+} */
 
 /* 
 
-HOMEPAGE
+article-page
 
  */
 
-#homepage {
+.article-page {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  grid-template-rows: 100px auto;
+  grid-template-rows: 100px calc((100vh - 145px) / 2) calc((100vh - 145px) / 2);
   /* height: 100% */
 }
 
-#trending-topics {
-}
-
-#homepage-header {
+.article-page-header {
   grid-column-start: 1;
   grid-column-end: 3;
 
@@ -99,13 +96,70 @@ HOMEPAGE
   overflow: auto;
   /* align-items: center; */
 }
+
+@media only screen and (max-width: 1250px) {
+  #item2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  #item2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .nav-text {
+    /* font-size: 2px; */
+    /* background-color: hotpink; */
+    padding: 14px 6px;
+  }
+  .article-page-header {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .nav-text {
+    /* font-size: 2px; */
+    /* background-color: hotpink; */
+    /* padding: 8px 2px; */
+    /* font-size: 10px; */
+  }
+  #nav-logo {
+    display: none;
+  }
+}
+
 #item3 {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  /* height: calc(100vh - 145px); */
+  height: calc((100vh - 145px) / 2);
   /* height: 500px; */
+  display: flex;
+  align-items: center;
+  /* flex-direction: column;
+  justify-content: center; */
+}
+
+#item4 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  height: calc((100vh - 145px) / 2);
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 }
 
 table {
@@ -153,4 +207,37 @@ table {
   padding: 2px;
   display: flex;
   justify-content: flex-start;
+}
+
+/*
+
+TRENDING TOPICS
+
+ */
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ba1f3f;
+  color: white;
+  font-family: Gotham-Bold;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  height: calc((80vh - 145px) / 2);
+  width: 90%;
+}
+
+.sidebar-title {
+  font-size: 22px;
+  /* padding-top: 0px; */
+}
+
+.sidebar-body {
+}
+
+.sidebar-card {
+  padding: 5px;
 }

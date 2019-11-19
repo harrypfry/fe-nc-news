@@ -17,7 +17,6 @@ class App extends React.Component {
           <Topics path="/topics/*" />
           <Users path="/users" />
         </Router>
-        {/* <div id="trending-topics">fdsfs</div> */}
       </div>
     );
   }

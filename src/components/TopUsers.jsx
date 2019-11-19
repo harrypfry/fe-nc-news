@@ -1,19 +1,19 @@
 import React from "react";
 
-class TrendingTopics extends React.Component {
+class TopUsers extends React.Component {
   state = {
-    trendingTopics: ["Coding", "Football", "Cooking"]
+    topUsers: ["tickle122", "grumpy19", "happyamy2016", "harryfry"]
   };
 
   render() {
     return (
       <section className="sidebar-section">
-        <div className="sidebar-title">&lt;Trending Topics&gt;</div>
+        <div className="sidebar-title">&lt; Top Users&gt;</div>
         <ol className="sidebar-body">
-          {this.state.trendingTopics.map((topic, index) => {
+          {this.state.topUsers.map((user, index) => {
             return (
               <li className="sidebar-card" key={index}>
-                {topic}
+                {user}
               </li>
             );
           })}
@@ -23,4 +23,4 @@ class TrendingTopics extends React.Component {
   }
 }
 
-export default TrendingTopics;
+export default TopUsers;

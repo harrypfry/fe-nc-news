@@ -12,7 +12,7 @@ const Nav = () => {
         <Link className="nav-text" to="/">
           HOME
         </Link>
-        <Link className="nav-text" to="/topics/:topic">
+        <Link className="nav-text" to="/topics/">
           TOPICS
         </Link>
         <Link className="nav-text" to="/users">
