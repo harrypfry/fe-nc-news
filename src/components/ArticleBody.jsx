@@ -1,14 +1,13 @@
 import React from "react";
-import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 
-const ArticleBody = ({ body, articleId }) => {
+const ArticleBody = ({ currentUser, body, articleId }) => {
   return (
     <>
       <section className="item2" id="individual-article-item2">
         <section id="body-text">{body}</section>
-        <CommentForm />
-        <CommentList articleId={articleId} />
+
+        <CommentList articleId={articleId} currentUser={currentUser} />
       </section>
     </>
   );

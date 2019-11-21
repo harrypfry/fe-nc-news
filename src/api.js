@@ -14,6 +14,17 @@ export const getCommentsByArticleId = articleId => {
   return axios.get(`${baseURL}/articles/${articleId}/comments`);
 };
 
-export const getUser = username => {
+export const getUserInfo = username => {
   return axios.get(`${baseURL}/users/${username}`);
+};
+
+export const postComment = (articleId, username, body) => {
+  return axios.post(`${baseURL}/articles/${articleId}/comments`, {
+    username,
+    body
+  });
+};
+
+export const deleteComment = commentId => {
+  return axios.delete(`${baseURL}/comments/${commentId}`);
 };

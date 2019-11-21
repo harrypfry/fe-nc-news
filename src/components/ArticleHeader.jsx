@@ -1,7 +1,6 @@
 import React from "react";
 
 const ArticleHeader = ({ type, title, subtitle }) => {
-  // console.log(type);
   return (
     <div
       className={

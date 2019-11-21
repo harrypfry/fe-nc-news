@@ -1,22 +1,36 @@
 import React from "react";
 
-import { getUser } from "../api";
+import { getUserInfo } from "../api";
 
-const ArticleUserInfo = ({ author }) => {
-  console.log(author);
-  return (
-    <section className="sidebar-user-info">
-      <div className="sidebar-author-title">&lt;AUTHOR&gt;</div>
-      <div className="sidebar-author-name">&lt;{author}&gt;</div>
-      <div className="sidebar-author-photo">
-        <img
-          className="avatar-img"
-          src="https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"
-          alt="User Avatar"
-        ></img>
-      </div>
-    </section>
-  );
-};
+class ArticleUserInfo extends React.Component {
+  state = {};
+
+  fetchUserInfo = author => {
+    getUserInfo(author).then(({ data: { user } }) => {
+      this.setState(user);
+    });
+  };
+
+  componentDidMount = () => {
+    const { author } = this.props;
+    this.fetchUserInfo(author);
+  };
+
+  render() {
+    return (
+      <section className="sidebar-user-info">
+        <div className="sidebar-author-title">&lt;AUTHOR&gt;</div>
+        <div className="sidebar-author-name">&lt;{this.props.author}&gt;</div>
+        <div className="sidebar-author-photo">
+          <img
+            className="avatar-img"
+            src={this.state.avatar_url}
+            alt="User Avatar"
+          ></img>
+        </div>
+      </section>
+    );
+  }
+}
 
 export default ArticleUserInfo;

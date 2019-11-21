@@ -21,9 +21,7 @@ class Article extends React.Component {
   };
 
   render() {
-    //   console.log(this.state)
     const { body, topic, title, article_id, author } = this.state.article;
-    console.log(this.state.article);
     return (
       <div className="article-page">
         {this.state.isLoading ? (
@@ -31,7 +29,11 @@ class Article extends React.Component {
         ) : (
           <>
             <ArticleHeader title={topic} subtitle={title} />
-            <ArticleBody body={body} articleId={article_id} />
+            <ArticleBody
+              currentUser={this.props.currentUser}
+              body={body}
+              articleId={article_id}
+            />
             <ArticleUserInfo author={author} />
           </>
         )}

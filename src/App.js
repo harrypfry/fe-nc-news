@@ -9,6 +9,8 @@ import Users from "./components/Users";
 import Article from "./components/Article";
 
 class App extends React.Component {
+  state = { currentUser: "weegembump" };
+
   render() {
     return (
       <div>
@@ -16,7 +18,7 @@ class App extends React.Component {
         <Router className="App">
           <Homepage path="/" />
           <Topics path="/topics/:topic" />
-          <Article path="/articles/:id" />
+          <Article currentUser={this.state.currentUser} path="/articles/:id" />
           <Users path="/users" />
         </Router>
       </div>
