@@ -4,27 +4,24 @@ import NCLogo from "./images/NorthcodersLogo.png";
 
 const Nav = () => {
   return (
-    <nav className="nav-bar">
+    <div className="navbar">
       <div>
-        <Link to="/">
+        <Link id="nav-logo-container" to="/">
           <img id="nav-logo" src={NCLogo} alt="Northcoders Logo" />
         </Link>
-        <Link className="nav-text" to="/">
-          HOME
-        </Link>
-        <Link className="nav-text" to="/topics/">
-          TOPICS
-        </Link>
-        <Link className="nav-text" to="/users">
-          USERS
-        </Link>
+        <Link to="/">HOME</Link>
+        <Link to="/">USERS</Link>
+        <div className="dropdown">
+          <button className="dropbtn">TOPICS</button>
+          <div className="dropdown-content">
+            <Link to="/topics/coding">Coding</Link>
+            <Link to="/topics/cooking">Cooking</Link>
+            <Link to="/topics/football">Football</Link>
+          </div>
+        </div>
       </div>
-      <div>
-        <Link className="nav-text" to="/login">
-          LOGIN
-        </Link>
-      </div>
-    </nav>
+      <Link to="/">LOGIN</Link>
+    </div>
   );
 };
 

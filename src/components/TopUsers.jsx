@@ -8,7 +8,7 @@ class TopUsers extends React.Component {
   render() {
     return (
       <section className="sidebar-section">
-        <div className="sidebar-title">&lt; Top Users&gt;</div>
+        <div className="sidebar-title">&lt;Top Users&gt;</div>
         <ol className="sidebar-body">
           {this.state.topUsers.map((user, index) => {
             return (

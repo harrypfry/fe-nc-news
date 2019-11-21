@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "@reach/router";
+
 class TrendingTopics extends React.Component {
   state = {
     trendingTopics: ["Coding", "Football", "Cooking"]
@@ -13,7 +15,7 @@ class TrendingTopics extends React.Component {
           {this.state.trendingTopics.map((topic, index) => {
             return (
               <li className="sidebar-card" key={index}>
-                {topic}
+                <Link to={`/topics/${topic.toLowerCase()}`}>{topic}</Link>
               </li>
             );
           })}

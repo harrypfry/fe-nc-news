@@ -56,16 +56,23 @@ class Topics extends React.Component {
     ]
   };
   render() {
+    const { topic } = this.props;
+    // // ({ topic } = this.props);
+
     return (
       <div className="article-page">
-        <ArticleHeader title={this.state.topic} />
-        <div id="item2">
-          <ArticleList />
+        <ArticleHeader
+          type="general"
+          title="NORTHCODERS NEWS"
+          subtitle={topic}
+        />
+        <div className="item2">
+          <ArticleList topic={topic} />
         </div>
-        <div id="item3">
+        <div className="item3">
           <TrendingTopics />
         </div>
-        <div id="item4">
+        <div className="item4">
           <TopUsers />
         </div>
       </div>

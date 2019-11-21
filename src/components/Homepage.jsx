@@ -72,16 +72,25 @@ class Homepage extends React.Component {
   render() {
     return (
       <div className="article-page">
-        <ArticleHeader title="Northcoders News" />
-        <div id="item2">
+        <ArticleHeader
+          type="general"
+          title="NORTHCODERS NEWS"
+          subtitle="HOME"
+        />
+        <div className="item2">
           <ArticleList />
         </div>
-        <div id="item3">
-          <TrendingTopics />
-        </div>
-        <div id="item4">
-          <TopUsers />
-        </div>
+
+        {window.innerWidth > 1250 && (
+          <div>
+            <div className="item3">
+              <TrendingTopics />
+            </div>
+            <div className="item4">
+              <TopUsers />
+            </div>
+          </div>
+        )}
       </div>
     );
   }

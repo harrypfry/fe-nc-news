@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
 import Topics from "./components/Topics";
 import Users from "./components/Users";
+import Article from "./components/Article";
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,8 @@ class App extends React.Component {
         <Nav />
         <Router className="App">
           <Homepage path="/" />
-          <Topics path="/topics/*" />
+          <Topics path="/topics/:topic" />
+          <Article path="/articles/:id" />
           <Users path="/users" />
         </Router>
       </div>
