@@ -1,15 +1,16 @@
 import React from "react";
 
-import voteImg from "./images/vote-img.png";
-
 import { Link } from "@reach/router";
+import VoteCounter from "./VoteCounter";
 
 const ArticleCard = ({ article }) => {
   return (
     <>
       <tr className="article-table-row">
         <td className="vote-col">
-          <img className="vote-img" src={voteImg} alt="vote" />
+          <VoteCounter
+            data={{ votes: article.votes, article_id: article.article_id }}
+          />
         </td>
         <td className="title-col">
           <div className="title-in-table">

@@ -3,7 +3,9 @@ import axios from "axios";
 const baseURL = "https://nc-news-hf.herokuapp.com/api";
 
 export const getArticles = query => {
-  return axios.get(`${baseURL}/articles`, { params: query });
+  return axios.get(`${baseURL}/articles`, {
+    params: query
+  });
 };
 
 export const getArticle = articleId => {
@@ -23,6 +25,14 @@ export const postComment = (articleId, username, body) => {
     username,
     body
   });
+};
+
+export const updateVote = ({ articleId, commentId, inc_votes }) => {
+  if (articleId) {
+    return axios.patch(`${baseURL}/articles/${articleId}`, { inc_votes });
+  } else if (commentId) {
+    return axios.patch(`${baseURL}/comments/${commentId}`, { inc_votes });
+  }
 };
 
 export const deleteComment = commentId => {

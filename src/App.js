@@ -17,6 +17,7 @@ class App extends React.Component {
         <Nav />
         <Router className="App">
           <Homepage path="/" />
+
           <Topics path="/topics/:topic" />
           <Article currentUser={this.state.currentUser} path="/articles/:id" />
           <Users path="/users" />

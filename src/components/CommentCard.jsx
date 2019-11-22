@@ -1,14 +1,15 @@
 import React from "react";
 
-import voteImg from "./images/vote-img.png";
+import VoteCounter from "./VoteCounter";
 
 const CommentCard = ({ comment, removeComment, currentUser }) => {
-  console.log(comment);
   return (
     <>
       <tr className="comment-table-row">
         <td className="vote-col">
-          <img className="vote-img" src={voteImg} alt="vote" />
+          <VoteCounter
+            data={{ votes: comment.votes, comment_id: comment.comment_id }}
+          />
         </td>
 
         <td className="comment-col">
