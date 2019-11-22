@@ -6,13 +6,39 @@ import ArticleBody from "./ArticleBody";
 import { getArticle } from "../api";
 import ArticleUserInfo from "./ArticleUserInfo";
 
+import Error from "./Error";
+
 class Article extends React.Component {
-  state = { article: {}, isLoading: true };
+  state = { article: {}, isLoading: true, errorData: { isError: false } };
 
   fetchArticle = id => {
-    getArticle(id).then(({ data: { article } }) =>
-      this.setState({ article, isLoading: false })
-    );
+    getArticle(id)
+      .then(({ data: { article } }) =>
+        this.setState({ article, isLoading: false })
+      )
+      .catch(err => {
+        const { status, msg } = err.response.data;
+        this.setState({
+          isLoading: false,
+          errorData: {
+            isError: true,
+            status,
+            msg
+          }
+        });
+      });
+    // .catch(
+    //   // ({
+    //   //   response: {
+    //   //     data: { msg, status }
+    //   //   }
+    //   // }) => {
+    //   //   console.log(msg, status);
+    //   //   return <Error code={status} msg={msg} />;
+    //   // }
+
+    //   this.setState({ isLoading: false, isError: true })
+    // );
   };
 
   componentDidMount = () => {
@@ -26,6 +52,11 @@ class Article extends React.Component {
       <div className="article-page">
         {this.state.isLoading ? (
           <div className="item2">Loading...</div>
+        ) : this.state.errorData.isError ? (
+          <Error
+            status={this.state.errorData.status}
+            msg={this.state.errorData.msg}
+          />
         ) : (
           <>
             <ArticleHeader title={topic} subtitle={title} />
