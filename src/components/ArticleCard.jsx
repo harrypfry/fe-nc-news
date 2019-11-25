@@ -22,7 +22,10 @@ const ArticleCard = ({ article }) => {
             </Link>
           </div>
           <div className="info-in-table">
-            written by {article.author} | {article.comment_count} comments |
+            written by&nbsp;
+            <Link to={`/users/${article.author}`}>{article.author}</Link>
+            &nbsp;|&nbsp;
+            {article.comment_count}&nbsp;comments&nbsp;|&nbsp;
             {new Date(article.created_at).toLocaleString()}
           </div>
         </td>

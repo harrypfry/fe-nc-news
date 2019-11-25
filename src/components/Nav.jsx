@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
 import NCLogo from "./images/NorthcodersLogo.png";
+import LoginMenu from "./LoginMenu";
 
-const Nav = () => {
+const Nav = ({ changeUser }) => {
   return (
     <div className="navbar">
       <div>
@@ -20,7 +21,9 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <Link to="/">LOGIN</Link>
+      <div className="user-dropdown">
+        <LoginMenu changeUser={changeUser} />
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import ArticleHeader from "./ArticleHeader";
 
 import haroldImg from "./images/Harold.jpg";
 
-const Error404 = ({ status, msg }) => {
+const Error = ({ status, msg }) => {
   return (
     <>
       <ArticleHeader
@@ -11,7 +11,7 @@ const Error404 = ({ status, msg }) => {
         title="Error"
         subtitle={`${status}-${msg}`}
       />
-      ;
+
       <div id="harold-wrapper">
         <img id="harold-image" src={haroldImg} alt="Hide the Pain Harold"></img>
       </div>
@@ -19,4 +19,4 @@ const Error404 = ({ status, msg }) => {
   );
 };
 
-export default Error404;
+export default Error;
