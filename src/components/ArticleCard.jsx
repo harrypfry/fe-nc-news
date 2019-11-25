@@ -1,6 +1,6 @@
 import React from "react";
-
 import { Link } from "@reach/router";
+
 import VoteCounter from "./VoteCounter";
 
 const ArticleCard = ({ article }) => {

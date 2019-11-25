@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { updateVote } from "../api";
 
-class VoteCounter extends Component {
+class VoteCounter extends React.Component {
   state = { voteChange: 0 };
 
   handleVote = direction => {
@@ -11,7 +11,7 @@ class VoteCounter extends Component {
     });
     const voteData = {
       articleId: this.props.data.article_id,
-      commentId: this.props.comment_id,
+      commentId: this.props.data.comment_id,
       inc_votes: direction
     };
     updateVote(voteData);

@@ -2,13 +2,11 @@ import React from "react";
 
 import ArticleHeader from "./ArticleHeader";
 import ArticleBody from "./ArticleBody";
+import ArticleUserInfo from "./ArticleUserInfo";
+import Error from "./Error";
+import loadingGif from "./images/loading.gif";
 
 import { getArticle } from "../api";
-import ArticleUserInfo from "./ArticleUserInfo";
-
-import Error from "./Error";
-
-import loadingGif from "./images/loading.gif";
 
 class Article extends React.Component {
   state = { article: {}, isLoading: true, errorData: { isError: false } };

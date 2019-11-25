@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 import VoteCounter from "./VoteCounter";
 
@@ -14,7 +15,8 @@ const CommentCard = ({ comment, removeComment, currentUser }) => {
 
         <td className="comment-col">
           <div className="comment-info">
-            {comment.author} - {new Date(comment.created_at).toLocaleString()}
+            <Link to={`/users/${comment.author}`}>{comment.author}</Link> -{" "}
+            {new Date(comment.created_at).toLocaleString()}
             {comment.author === currentUser && (
               <>
                 &nbsp; &nbsp;

@@ -1,8 +1,8 @@
 import React from "react";
 
-import { getUserInfo } from "../api";
-
 import loadingGif from "./images/loading.gif";
+
+import { getUserInfo } from "../api";
 
 class ArticleUserInfo extends React.Component {
   state = { isLoading: true };
@@ -36,7 +36,7 @@ class ArticleUserInfo extends React.Component {
             <div className="sidebar-author-photo">
               <img
                 className="avatar-img"
-                src={this.state.avatar_url}
+                src={this.state.user.avatar_url}
                 alt="User Avatar"
               ></img>
             </div>

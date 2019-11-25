@@ -1,8 +1,9 @@
 import React from "react";
+
 import ArticleHeader from "./ArticleHeader";
+import ArticleList from "./ArticleList";
 
 import { getUserInfo } from "../api";
-import ArticleList from "./ArticleList";
 
 class User extends React.Component {
   state = { user: {} };

@@ -1,19 +1,21 @@
 import React from "react";
+import { navigate } from "@reach/router";
 
 import ArticleCard from "./ArticleCard";
+import loadingGif from "./images/loading.gif";
 
 import { getArticles } from "../api";
-
-import loadingGif from "./images/loading.gif";
 
 class ArticleList extends React.Component {
   state = { articles: [], isLoading: true };
 
   fetchArticles(params) {
     this.setState({ isLoading: true });
-    getArticles(params).then(({ data: { articles } }) => {
-      this.setState({ articles, isLoading: false });
-    });
+    getArticles(params)
+      .then(({ data: { articles } }) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => navigate("/404/"));
   }
 
   componentDidMount = () => {

@@ -1,7 +1,7 @@
 import React from "react";
-import CommentList from "./CommentList";
-
 import { Link } from "@reach/router";
+
+import CommentList from "./CommentList";
 
 const ArticleBody = ({ currentUser, body, articleId, author }) => {
   return (

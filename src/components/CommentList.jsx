@@ -2,9 +2,9 @@ import React from "react";
 
 import CommentCard from "./CommentCard";
 import CommentForm from "./CommentForm";
-import { getCommentsByArticleId, postComment, deleteComment } from "../api";
-
 import loadingGif from "./images/loading.gif";
+
+import { getCommentsByArticleId, postComment, deleteComment } from "../api";
 
 class CommentList extends React.Component {
   state = { comments: [], isLoading: true };
@@ -22,7 +22,6 @@ class CommentList extends React.Component {
   };
 
   addComment = (articleId, currentUser, comment) => {
-    console.log("in add comment");
     this.setState({ isLoading: true });
     postComment(articleId, currentUser, comment).then(
       ({ data: { comment } }) => {

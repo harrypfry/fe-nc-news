@@ -3,7 +3,7 @@ import React from "react";
 import { getUsers } from "../api";
 
 class LoginMenu extends React.Component {
-  state = { users: [], loggedInUser: "LOGIN" };
+  state = { users: [] };
   componentDidMount = () => {
     getUsers().then(({ data }) => {
       this.setState({ users: data });
@@ -16,14 +16,13 @@ class LoginMenu extends React.Component {
   };
 
   logoutUser = event => {
-    console.log(event.target.id);
     this.props.changeUser(event.target.id);
   };
 
   render() {
     return (
       <>
-        <div className="dropbtn">{this.state.loggedInUser}</div>
+        <div className="dropbtn">{this.props.currentUser}</div>
         <div className="user-dropdown-content">
           {this.state.users.map(user => {
             return (

@@ -17,16 +17,17 @@ class CommentForm extends React.Component {
   };
 
   render() {
-    return (
+    return this.props.currentUser === "LOGIN" ? (
+      <p id="please-login">Please login to post comment...</p>
+    ) : (
       <form id="comment-form" onSubmit={this.handleSubmit}>
-        <label>
-          <textarea
-            required
-            onChange={this.handleChange}
-            id="comment-input"
-            value={this.state.comment}
-          />
-        </label>
+        <textarea
+          required
+          onChange={this.handleChange}
+          id="comment-input"
+          placeholder="Add a comment..."
+          value={this.state.comment}
+        />
         &nbsp; &nbsp;
         <button id="submit-comment-button" title="Submit Comment" type="submit">
           &lt;Submit/&gt;

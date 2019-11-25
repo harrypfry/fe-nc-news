@@ -1,6 +1,6 @@
 import React from "react";
-import ArticleHeader from "./ArticleHeader";
 
+import ArticleHeader from "./ArticleHeader";
 import haroldImg from "./images/Harold.jpg";
 
 const Error = ({ status, msg }) => {
