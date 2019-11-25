@@ -1,15 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 
 import ArticleCard from "./ArticleCard";
 
 import { getArticles } from "../api";
 
-class ArticleList extends Component {
+import loadingGif from "./images/loading.gif";
+
+class ArticleList extends React.Component {
   state = { articles: [], isLoading: true };
 
   fetchArticles(params) {
-    getArticles(params).then(({ data }) => {
-      this.setState(data);
+    this.setState({ isLoading: true });
+    getArticles(params).then(({ data: { articles } }) => {
+      this.setState({ articles, isLoading: false });
     });
   }
 
@@ -53,7 +56,7 @@ class ArticleList extends Component {
 
   render() {
     return (
-      <section>
+      <section className="article-list-main">
         <section className="sort-section">
           <div className="bold">Sort by:&nbsp;</div>{" "}
           <button
@@ -88,13 +91,22 @@ class ArticleList extends Component {
             votes
           </button>
         </section>
-        <table className="article-table">
-          <tbody>
-            {this.state.articles.map(article => {
-              return <ArticleCard key={article.article_id} article={article} />;
-            })}
-          </tbody>
-        </table>
+
+        {this.state.isLoading ? (
+          <div className="loading-img-wrapper">
+            <img className="loading-img" src={loadingGif} alt="Loading..." />
+          </div>
+        ) : (
+          <table className="article-table">
+            <tbody>
+              {this.state.articles.map(article => {
+                return (
+                  <ArticleCard key={article.article_id} article={article} />
+                );
+              })}
+            </tbody>
+          </table>
+        )}
       </section>
     );
   }

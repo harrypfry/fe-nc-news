@@ -4,11 +4,15 @@ import CommentCard from "./CommentCard";
 import CommentForm from "./CommentForm";
 import { getCommentsByArticleId, postComment, deleteComment } from "../api";
 
+import loadingGif from "./images/loading.gif";
+
 class CommentList extends React.Component {
   state = { comments: [], isLoading: true };
+
   fetchComments = id => {
-    getCommentsByArticleId(id).then(({ data }) => {
-      this.setState(data);
+    this.setState({ isLoading: true });
+    getCommentsByArticleId(id).then(({ data: { comments } }) => {
+      this.setState({ comments, isLoading: false });
     });
   };
 
@@ -18,10 +22,15 @@ class CommentList extends React.Component {
   };
 
   addComment = (articleId, currentUser, comment) => {
+    console.log("in add comment");
+    this.setState({ isLoading: true });
     postComment(articleId, currentUser, comment).then(
       ({ data: { comment } }) => {
         this.setState(currentState => {
-          return { comments: [comment, ...currentState.comments] };
+          return {
+            comments: [comment, ...currentState.comments],
+            isLoading: false
+          };
         });
       }
     );
@@ -48,20 +57,26 @@ class CommentList extends React.Component {
           currentUser={currentUser}
           addComment={this.addComment}
         />
-        <table className="comment-table">
-          <tbody>
-            {this.state.comments.map(comment => {
-              return (
-                <CommentCard
-                  currentUser={currentUser}
-                  key={comment.comment_id}
-                  comment={comment}
-                  removeComment={this.removeComment}
-                />
-              );
-            })}
-          </tbody>
-        </table>
+        {this.state.isLoading ? (
+          <div className="loading-img-wrapper">
+            <img className="loading-img" src={loadingGif} alt="Loading..." />
+          </div>
+        ) : (
+          <table className="comment-table">
+            <tbody>
+              {this.state.comments.map(comment => {
+                return (
+                  <CommentCard
+                    currentUser={currentUser}
+                    key={comment.comment_id}
+                    comment={comment}
+                    removeComment={this.removeComment}
+                  />
+                );
+              })}
+            </tbody>
+          </table>
+        )}
       </>
     );
   }

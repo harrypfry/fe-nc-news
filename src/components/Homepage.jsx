@@ -17,17 +17,14 @@ class Homepage extends React.Component {
         <div className="item2">
           <ArticleList />
         </div>
-
-        {window.innerWidth > 1250 && (
-          <div>
-            <div className="item3">
-              <TrendingTopics />
-            </div>
-            <div className="item4">
-              <TopUsers />
-            </div>
+        <div>
+          <div className="item3">
+            <TrendingTopics />
           </div>
-        )}
+          <div className="item4">
+            <TopUsers />
+          </div>
+        </div>
       </div>
     );
   }

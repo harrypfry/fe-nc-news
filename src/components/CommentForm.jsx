@@ -1,7 +1,7 @@
 import React from "react";
 
 class CommentForm extends React.Component {
-  state = { comment: "" };
+  state = { isLoading: true, comment: "" };
 
   handleChange = event => {
     this.setState({ comment: event.target.value });
