@@ -3,6 +3,7 @@ import React from "react";
 import loadingGif from "./images/loading.gif";
 
 import { getUserInfo } from "../api";
+import { Link } from "@reach/router";
 
 class ArticleUserInfo extends React.Component {
   state = { isLoading: true };
@@ -31,7 +32,9 @@ class ArticleUserInfo extends React.Component {
           <>
             <div className="sidebar-author-title">&lt;AUTHOR&gt;</div>
             <div className="sidebar-author-name">
-              &lt;{this.props.author}&gt;
+              <Link to={`/users/${this.props.author}`}>
+                &lt;{this.props.author}&gt;
+              </Link>
             </div>
             <div className="sidebar-author-photo">
               <img
@@ -39,6 +42,13 @@ class ArticleUserInfo extends React.Component {
                 src={this.state.user.avatar_url}
                 alt="User Avatar"
               ></img>
+            </div>
+            <div className="sidebar-author-score">
+              {`Article Score: ${this.state.user.article_score}`}
+            </div>
+            <br />
+            <div className="sidebar-author-score">
+              {`Comment Score: ${this.state.user.comment_score}`}
             </div>
           </>
         )}

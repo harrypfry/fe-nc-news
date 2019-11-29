@@ -8,8 +8,8 @@ export const getArticles = query => {
   });
 };
 
-export const getUsers = () => {
-  return axios.get("https://nc-news-hf.herokuapp.com/api/users");
+export const getUsers = (limit = 1000) => {
+  return axios.get(`https://nc-news-hf.herokuapp.com/api/users?limit=${limit}`);
 };
 
 export const getArticle = articleId => {

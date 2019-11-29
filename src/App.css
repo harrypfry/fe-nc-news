@@ -350,7 +350,7 @@
 
 .user-info {
   background-color: #ba1f3f;
-  height: 300px;
+  height: 325px;
   margin: 50px;
   border-radius: 5px;
   font-family: Gotham-Bold;
@@ -362,6 +362,7 @@
 
 .user-avatar {
   height: 175px;
+  border-radius: 87.5px;
 }
 
 .user-fullname {
@@ -376,6 +377,11 @@
   align-items: center;
   width: 90%;
   justify-content: center;
+}
+
+.user-score {
+  font-family: Gotham-book;
+  color: white;
 }
 
 /* ======  VOTE COUNTER ====== */
@@ -627,8 +633,10 @@ table {
   font-size: 22px;
 }
 
-.sidebar-body {
+.sidebar-body a {
   text-decoration: none !important;
+  font-size: 14px;
+  color: white;
 }
 
 .sidebar-card {
@@ -637,6 +645,7 @@ table {
 
 .sidebar-body:visited {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
@@ -672,6 +681,15 @@ a:visited {
   font-family: Gotham-Book;
   padding: 0px;
   font-size: 20px;
+}
+.sidebar-author-name a {
+  text-decoration: none;
+}
+
+.sidebar-author-score {
+  font-family: Gotham-Book;
+  padding: 0px;
+  font-size: 14px;
 }
 
 .avatar-img {
