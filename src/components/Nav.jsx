@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-import NCLogo from "./images/NorthcodersLogo.png";
+import NCLogo from "./images/NorthcodersLogo.ico";
 import LoginMenu from "./LoginMenu";
 
 const Nav = ({ changeUser, currentUser }) => {

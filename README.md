@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Northcoders News - Front End
 
-## Available Scripts
+Northcoders news is a web-based applications designed to act as a social news hub, largeley based on *Reddit*.The front end allows the users to sign in and interact with both comments and articles. The front end provides the user with an interactive interface with the RESTful api built in the back end section of the app.
 
-In the project directory, you can run:
+#### Deployed Versions
 
-### `npm start`
+- [Back End](https://nc-news-hf.herokuapp.com/api/users/)
+- [Front End](https://nc-news-hf.netlify.com/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+To run the project locally, follow the below instructions.
 
-### `npm test`
+Open the terminal and change directory to the location you wish copy the app to.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```terminal
+git clone https://github.com/harrypfry/fe-nc-news
+```
 
-### `npm run build`
+Change directory to the app and run the below command to install the required dependencies (react v16.12.0, axios v0.19.0 and @reach/router v1.2.1)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```terminal
+npm install
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Run the react app locally with the following command.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```terminal
+npm start
+```
 
-### `npm run eject`
+This will run the app locally at [http://localhost:3000](http://localhost:3000/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## User Stories
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As a user, I am able to
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. view a list of all articles
+2. view a page for each topic with a list of related articles.
+3. view an individual article.
+4. view an individual article's comments.
+5. sort articles by:
+   - date created
+   - comment_count
+   - votes
+6. post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+7. delete my own comments (as a default logged in user. e.g. 'jessjelly').
+8. vote on an article and immediately see the change.
+9. vote on a comment and immediately see the change.
+10. use the site on my mobile without sacrificing style or functionality
+11. view and update the total score a user has accumulated
+12. view a list of all articles written by a specific user
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Build With
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [React](https://reactjs.org/) - Javascript library for building interfaces
+- [Reach Router](https://reach.tech/router) - A route manager for the react-app
+- [Axios](https://github.com/axios/axios) - A promise based HTTP client for the browser and node.js
